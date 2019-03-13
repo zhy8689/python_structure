@@ -1,10 +1,10 @@
 # -*-coding:utf-8 -*-
 
 '''
-Created on 2019��3��10��
-
+Created on 2019年3月10日
 @author: Administrator
 '''
+
 from log import log_tool
 log = log_tool.My_Log().get_logger()
 
@@ -17,15 +17,11 @@ class Node(object):
         
         
 class Double_Link(object):
-    '''
-    classdocs
-    '''
+    ''' python实现双链表数据结构'''
 
 
     def __init__(self):
-        '''
-        Constructor
-        '''
+        ''' Constructor '''
         self._head = None
         self._tail = None
         
@@ -44,7 +40,7 @@ class Double_Link(object):
     
     
     def pop(self):
-        ''''''
+        '''从双链表中删除一个末尾元素'''
         if self._head == None:
             raise Exception("Current link has no node.......")
         cur_node = self._tail
@@ -62,7 +58,7 @@ class Double_Link(object):
     
     
     def insert(self, index, item):
-        ''''''
+        ''' 向双链表的指定位置插入一个元素  '''
         cur_node = None
         
         for i, node in enumerate(self.iter_nodes()):
@@ -89,7 +85,7 @@ class Double_Link(object):
             
             
     def remove(self, index):
-        ''''''
+        ''' 从双链表的指定位置删除一个元素  '''
         if self._tail == None:
             raise Exception("empty link")
         cur_node = None
@@ -121,7 +117,7 @@ class Double_Link(object):
         del cur_node
             
     def iter_nodes(self):
-        ''' ''' 
+        ''' 使用生成器 遍历双链表中的每个元素 ''' 
         cur_node = self._head
         
         while cur_node:
@@ -130,12 +126,12 @@ class Double_Link(object):
     
      
     def is_empty(self):
-        '''判断双链表是否为空 '''
+        '''判断双链表是否为空  '''
         return self._head == None
     
     
     def travle(self):
-        ''' 遍历整个链表，将列表元素打印处理 '''
+        ''' 遍历整个链表，将列表元素打印处理   '''
         if not self.is_empty():
             cur_node = self._head
             while cur_node.next != None:
